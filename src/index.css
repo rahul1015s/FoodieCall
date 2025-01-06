@@ -8,3 +8,11 @@ body {
     background-color: #1b1b32;
     font-family: 'Alatsi', sans-serif;
 }
+
+
+.meal-item-price {
+    @apply inline-block bg-[#312c1d] text-[#ffc404] text-[0.9rem] font-bold p-2 px-8 m-0 rounded-md;
+  }
+  
+
+

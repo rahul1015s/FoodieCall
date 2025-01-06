@@ -4,7 +4,7 @@ import {Link } from 'react-router-dom';
 export default function Header() {
     return(
        
-        <header className="bg-transparent sticky top-0 border border-yellow-10 flex justify-between items-center">
+        <header className="bg-transparent sticky top-0 border border-yellow-10 flex justify-between items-center backdrop-blur-md">
    <nav className="flex justify-between items-center w-full">
       
       {/* Logo and Title */}
