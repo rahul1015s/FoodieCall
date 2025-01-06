@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        alatsi: ['Alatsi', 'serif'], // Add Roboto for general use
+      },
+    },
   },
   plugins: [],
-}
+};
