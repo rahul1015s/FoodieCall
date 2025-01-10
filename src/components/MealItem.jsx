@@ -1,4 +1,5 @@
 import { currencyFormatter } from "../util/formatting.jsx";
+import Button from "./UI/Button.jsx";
 
 export default function MealItem({meal}) {
     return(
@@ -12,7 +13,7 @@ export default function MealItem({meal}) {
             </div>
 
             <p className="mb-[1.5rem]">
-                <button className="bg-yellow-600 px-2 py-1 rounded hover:bg-yellow-800 ">Add to Cart</button>
+                <Button>Add to Cart</Button>
             </p>
 
         </article>

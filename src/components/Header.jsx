@@ -1,5 +1,6 @@
 import logoImg from '../assets/logo.jpg'
 import {Link } from 'react-router-dom';
+import Button from './UI/Button';
 
 export default function Header() {
     return(
@@ -15,7 +16,7 @@ export default function Header() {
       
       {/* Cart Button */}
       <div className='flex justify-end items-center mr-4 text-white text-2xl'>
-         <button>Cart (0)</button>
+         <Button textOnly>Cart (0)</Button>
       </div>
    </nav>
 </header>
