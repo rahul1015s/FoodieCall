@@ -1,7 +1,15 @@
+import { useContext } from 'react';
 import logoImg from '../assets/logo.jpg'
 import Button from './UI/Button';
+import CartContext from '../store/CartContext';
 
 export default function Header() {
+
+  const cartCtx =  useContext(CartContext);
+   const totalCartItem = cartCtx.items.reduce((totalNoOfItems, item) => {
+      return totalNoOfItems + item.quantity;
+   },0);
+
     return(
        
         <header className="bg-transparent sticky top-0 border border-yellow-10 flex justify-between items-center backdrop-blur-md">
@@ -15,7 +23,7 @@ export default function Header() {
       
       {/* Cart Button */}
       <div className='flex justify-end items-center mr-4 text-white text-2xl'>
-         <Button textOnly>Cart (0)</Button>
+         <Button textOnly>Cart ({totalCartItem})</Button>
       </div>
    </nav>
 </header>
