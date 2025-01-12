@@ -1,5 +1,4 @@
 import logoImg from '../assets/logo.jpg'
-import {Link } from 'react-router-dom';
 import Button from './UI/Button';
 
 export default function Header() {
