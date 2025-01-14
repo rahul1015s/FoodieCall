@@ -2,13 +2,23 @@ import { useContext } from 'react';
 import logoImg from '../assets/logo.jpg'
 import Button from './UI/Button';
 import CartContext from '../store/CartContext';
+import UserProgressContext from '../store/UserProgressContext';
 
 export default function Header() {
 
   const cartCtx =  useContext(CartContext);
+
+   const userProgressCtx = useContext(UserProgressContext);
+
+
    const totalCartItem = cartCtx.items.reduce((totalNoOfItems, item) => {
       return totalNoOfItems + item.quantity;
    },0);
+
+
+   function handleShowCart() {
+      userProgressCtx.showCart();
+   }
 
     return(
        
@@ -23,7 +33,7 @@ export default function Header() {
       
       {/* Cart Button */}
       <div className='flex justify-end items-center mr-4 text-white text-2xl'>
-         <Button textOnly>Cart ({totalCartItem})</Button>
+         <Button  onClick={handleShowCart}>Cart ({totalCartItem})</Button>
       </div>
    </nav>
 </header>
