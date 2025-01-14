@@ -5,13 +5,16 @@ export default function Modal({ children, open }) {
     const dialog = useRef();
 
     useEffect(() => {
+        const modal = dialog.current;
         if(open) {
-            dialog.current.showModal();
+            modal.showModal();
         }
+
+        return () => modal.close();  // cleanup function
     }, [open]);
 
   return createPortal(
-    <dialog ref={dialog} className="bg-orange-10 rounded-md w-96 p-6 h-40 shadow-lg overflow-hidden  ">{children}</dialog>,
+    <dialog ref={dialog} className="bg-orange-10 rounded-md  p-6 overflow-hidden  w-96">{children}</dialog>,
     document.getElementById("modal")
   );
 }

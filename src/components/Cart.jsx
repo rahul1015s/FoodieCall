@@ -12,13 +12,17 @@ export default function Cart() {
     (totalPrice, item) => totalPrice + item.quantity * item.price,
     0
   );
+   
+  function handleCloseCart() {
+    userProgressCtx.hideCart();
+  }
 
   return (
     <Modal open={userProgressCtx.progress === "cart"}>
       <h2 className="font-alatsi text-2xl mb-4">Your Cart</h2>
-      <ul className="mb-4">
+      <ul>
         {cartCtx.items.map((items) => (
-          <li className="flex justify-between py-2" key={items.id}>
+          <li  key={items.id}>
             {items.name} - {items.quantity}
           </li>
         ))}
@@ -27,9 +31,9 @@ export default function Cart() {
         {currencyFormatter.format(cartTotal)}
       </p>
       <p className="flex justify-end space-x-4">
-        <Button textOnly className="text-gray-500">
+        <button className="bg-none" onClick={handleCloseCart}>
           Close
-        </Button>
+        </button>
         <Button>Go to Checkout</Button>
       </p>
     </Modal>
