@@ -21,7 +21,7 @@ export default function Checkout() {
   }
 
   return (
-    <Modal open={userProgressCtx.progress === "checkout"}>
+    <Modal open={userProgressCtx.progress === "checkout"} onClose={handleClose}>
       <form className="">
         <h2 className="text-2xl font-bold text-gray-800 mb-4">Checkout</h2>
         <p className="text-lg text-gray-700">
