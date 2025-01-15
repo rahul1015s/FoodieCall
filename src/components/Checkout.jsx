@@ -20,9 +20,16 @@ export default function Checkout() {
     userProgressCtx.hideCheckout();
   }
 
+  function handleSubmit (event) {
+    event.preventDefault()
+
+    const fd = new FormData(event.target);
+    const customerData = Object.fromEntries(fd.entries());
+  }
+
   return (
     <Modal open={userProgressCtx.progress === "checkout"} onClose={handleClose}>
-      <form className="">
+      <form className="" onSubmit={handleSubmit}>
         <h2 className="text-2xl font-bold text-gray-800 mb-4">Checkout</h2>
         <p className="text-lg text-gray-700">
           Total Amount:{" "}
